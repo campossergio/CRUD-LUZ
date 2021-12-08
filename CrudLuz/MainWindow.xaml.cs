@@ -26,14 +26,10 @@ namespace CrudLuz
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
+            Cadastro cadastro = new Cadastro();
+            cadastro.Show();
         }
     }
 }

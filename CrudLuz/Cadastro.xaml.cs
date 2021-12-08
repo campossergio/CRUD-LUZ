@@ -10,18 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CrudLuz
 {
     /// <summary>
-    /// Lógica interna para PaginaInicial.xaml
+    /// Lógica interna para Cadastro.xaml
     /// </summary>
-    public partial class PaginaInicial : Window
+    public partial class Cadastro : Window
     {
-        public PaginaInicial()
+        public Cadastro()
         {
+            //DataContext = new Cadastro();
             InitializeComponent();
+        }
+
+        private void InitializeComponent()
+        {
+            //throw new NotImplementedException();
         }
     }
 }

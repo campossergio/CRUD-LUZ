@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="CRUD - Biblioteca Luz" Height="450" Width="800">
     <Grid>
-        <Button Command="{Binding adicionaLivro}" Content="ADICIONAR LIVRO " HorizontalAlignment="Left" Margin="206,105,0,0" VerticalAlignment="Top" Height="40" Width="270" Click="Button_Click" FontWeight="Bold"/>
         <TextBox Text="{Binding nomeLivro}" HorizontalAlignment="Left" Margin="206,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="40" TextAlignment="Left"/>
         <ListView ItemsSource="{Binding listaDeLivros}" Margin="526,40,30,39">
             <ListView.View>
@@ -17,7 +16,8 @@
             </ListView.View>
         </ListView>
         <TextBlock x:Name="txtLivro" HorizontalAlignment="Left" Margin="36,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="165" TextDecorations="{x:Null}" FontWeight="Bold" TextAlignment="Right"><Run Text="&#xA;&#x9;"/><Run Language="pt-br" Text="NOME DO "/><Run Text="LIVRO :"/></TextBlock>
-        <Button Content="ALTERAR DADOS" HorizontalAlignment="Left" Margin="206,177,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold"/>
-        <Button Command="{Binding deletaLivro}" Content="DELETAR LIVRO" HorizontalAlignment="Left" Margin="206,250,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold"/>
-    </Grid>
+        <Button Content="ALTERAR DADOS" HorizontalAlignment="Left" Margin="206,177,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold" BorderBrush="#FF0A0202" FontSize="14"/>
+        <Button Command="{Binding deletaLivro}" Content="DELETAR LIVRO" HorizontalAlignment="Left" Margin="206,250,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold" BorderBrush="#FF080303" FontSize="14"/>
+        <Button x:Name="btnCadastrar" Content="CADASTRAR LIVROS" HorizontalAlignment="Left" Margin="206,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.455" Width="270" Height="40" FontWeight="Bold" FontSize="14" BorderBrush="#FF080202" Click="btnCadastrar_Click"/>
+    </Grid>    
 </Window>

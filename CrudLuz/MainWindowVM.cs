@@ -13,21 +13,24 @@ namespace CrudLuz
     {
         public ObservableCollection<string> listaDeLivros { get; set; }
         public string nomeLivro { get; set; }
-        public ICommand adicionaLivro { get; private set; }
+        //public ICommand adicionaLivro { get; private set; }
         public ICommand deletaLivro { get; private set; }
         public MainWindowVM() // CONSTRUTOR
         {
             nomeLivro = "";
 
+            //Livro livro = new Livro("O segredo", "Sérgio Campos", "Saraiva");
+            //Console.WriteLine(livro);
+
             listaDeLivros = new ObservableCollection<string>();
-            listaDeLivros.Add("-----Lista de Livros-----");
+            listaDeLivros.Add("----- LISTA DE LIVROS DISPONÍVEIS -----");
             //listaDeLivros.Remove(nomeLivro);            
 
-            adicionaLivro = new RelayCommand((object param) => {
+            //adicionaLivro = new RelayCommand((object param) => {
                 //nomeLivro = "O Segredo"; // quando clicar no botão alterar o nomeLivro
-                listaDeLivros.Add(nomeLivro);
-                //Notifica("nomeLivro"); // chamar a função para incluir um livro na lista
-            });
+                //listaDeLivros.Add(nomeLivro);
+                //Notifica("nomeLivro"); // chamar a função para notificar que mais um livro foi adicionado na lista
+            //});
 
             deletaLivro = new RelayCommand((object param) =>
             {
