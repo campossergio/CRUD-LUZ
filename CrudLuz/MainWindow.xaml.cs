@@ -28,7 +28,7 @@ namespace CrudLuz
 
         private void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
-            Cadastro cadastro = new Cadastro();
+            InserirDados cadastro = new InserirDados();
             cadastro.Show();
         }
     }

@@ -10,25 +10,30 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CrudLuz
 {
     /// <summary>
-    /// Lógica interna para Cadastro.xaml
+    /// Lógica interna para InserirDados.xaml
     /// </summary>
-    public partial class Cadastro : Window
+    public partial class InserirDados : Window
     {
-        public Cadastro()
+        public InserirDados()
         {
-            //DataContext = new Cadastro();
             InitializeComponent();
         }
 
-        private void InitializeComponent()
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            //throw new NotImplementedException();
+            //MainWindow lista = new MainWindow();
+            //lista.Show();
+
+        }
+
+        private void BtnFechar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

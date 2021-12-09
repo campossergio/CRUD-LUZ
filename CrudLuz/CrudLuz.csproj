@@ -55,12 +55,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Cadastro.xaml.cs">
-      <DependentUpon>Cadastro.xaml</DependentUpon>
+    <Compile Include="InserirDados.xaml.cs">
+      <DependentUpon>InserirDados.xaml</DependentUpon>
     </Compile>
     <Compile Include="Livro.cs" />
     <Compile Include="RelayCommand.cs" />
-    <Page Include="Cadastro.xaml">
+    <Page Include="InserirDados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

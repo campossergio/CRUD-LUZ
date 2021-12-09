@@ -14,5 +14,5 @@ C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\CrudLuz.csproj.GenerateRes
 C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\CrudLuz.csproj.CoreCompileInputs.cache
 C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\CrudLuz.exe
 C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\CrudLuz.pdb
-C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\Cadastro.g.cs
-C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\Cadastro.baml
+C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\InserirDados.g.cs
+C:\Users\serma\source\repos\CrudLuz\CrudLuz\obj\Debug\InserirDados.baml
