@@ -11,31 +11,48 @@ namespace CrudLuz
 {
     public class MainWindowVM : INotifyPropertyChanged
     {
-        public ObservableCollection<string> listaDeLivros { get; set; }
+        public ObservableCollection<Livro> ListaDeLivros { get; set; }
         public string nomeLivro { get; set; }
+        public string nomeAutor { get; set; }
+        public string nomeEditora { get; set; }
+
+        private InserirDados cadastro;
+
+        private InserirDados abrir;
+        private Livro lv { get; set; }
         public ICommand adicionaLivro { get; private set; }
         public ICommand deletaLivro { get; private set; }
-        public ICommand alterarLivro { get; private set; }
+        public ICommand alterarLivro { get; private set; }        
+        public ICommand abrirCadastro { get; private set; }
         public MainWindowVM() // CONSTRUTOR
-        {
-            nomeLivro = "";
+        {           
+            
+            ListaDeLivros = new ObservableCollection<Livro>();
 
-            listaDeLivros = new ObservableCollection<string>();
-            listaDeLivros.Add("----- LISTA DE LIVROS DISPONÍVEIS -----");                   
-
-            adicionaLivro = new RelayCommand((object param) => {                
-                listaDeLivros.Add(nomeLivro);
-                //Notifica("nomeLivro"); // chamar a função para notificar que mais um livro foi adicionado na lista
+            adicionaLivro = new RelayCommand((object param) => {
+                cadastro = new InserirDados();
+                lv = new Livro(nomeLivro, nomeAutor, nomeEditora);
+                cadastro.DataContext = lv;
+                cadastro.Show();
+                ListaDeLivros.Add(lv);
             });
 
+            abrirCadastro = new RelayCommand((object param) => {
+                abrir = new InserirDados();
+                abrir.Show();                
+            });
+             
             deletaLivro = new RelayCommand((object param) =>
             {
-                listaDeLivros.Remove(nomeLivro);
+                ListaDeLivros.RemoveAt(0);
             });
 
             alterarLivro = new RelayCommand((object param) =>
             {
-                listaDeLivros.Add(nomeLivro);
+                cadastro = new InserirDados();
+                lv = new Livro(nomeLivro, nomeAutor, nomeEditora);
+                cadastro.DataContext = lv;
+                ListaDeLivros.Add(lv);
             });
         }
 
@@ -43,6 +60,6 @@ namespace CrudLuz
         private void Notifica(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+        }  
     }
 }

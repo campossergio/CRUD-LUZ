@@ -5,21 +5,31 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CrudLuz" d:DataContext="{d:DesignInstance Type=local:MainWindowVM}"
         mc:Ignorable="d"
-        Title="CRUD - Biblioteca Luz" Height="450" Width="800">
-    <Grid>
-        <TextBox Text="{Binding nomeLivro}" HorizontalAlignment="Left" Margin="206,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="40" TextAlignment="Left"/>
+        Title="CRUD - Biblioteca Luz" Height="450" Width="1000">
 
-        <TextBlock x:Name="txtLivro" HorizontalAlignment="Left" Margin="35,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="166" TextDecorations="{x:Null}" FontWeight="Bold" TextAlignment="Left"><Run Text="&#xA;&#x9;"/><Run Language="pt-br" Text="NOME DO "/><Run Text="LIVRO :"/></TextBlock>
-        <Button Command="{Binding adicionaLivro}" Content="ALTERAR DADOS" HorizontalAlignment="Left" Margin="206,177,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold" BorderBrush="#FF0A0202" FontSize="14"/>
-        <Button Command="{Binding deletaLivro}" Content="DELETAR LIVRO" HorizontalAlignment="Left" Margin="206,250,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold" BorderBrush="#FF080303" FontSize="14"/>
-        <Button x:Name="btnCadastrar" Content="CADASTRAR LIVROS" HorizontalAlignment="Left" Margin="206,106,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.455" Width="270" Height="40" FontWeight="Bold" FontSize="14" BorderBrush="#FF080202" Click="btnCadastrar_Click"/>
-        <ListView ItemsSource="{Binding listaDeLivros}" Margin="500,40,20,40" BorderBrush="#FF030406" Foreground="#FF040710" FontSize="14" FontWeight="Bold">
+    <Grid>
+        <TextBox x:Name="Nome" Text="{Binding ElementName=lstAlteracao, Path=SelectedValue.Nome}" HorizontalAlignment="Left" Margin="206,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="40" TextAlignment="Left"/>
+        <TextBox x:Name="Autor" Text="{Binding ElementName=lstAlteracao, Path=SelectedValue.Autor}" HorizontalAlignment="Left" Margin="206,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="40" TextAlignment="Left"/>
+        <TextBox x:Name="Editora" Text="{Binding ElementName=lstAlteracao, Path=SelectedValue.Editora}" HorizontalAlignment="Left" Margin="206,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="40" TextAlignment="Left"/>
+
+        <TextBlock x:Name="txtNome" HorizontalAlignment="Left" Margin="35,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="166" TextDecorations="{x:Null}" FontWeight="Bold" TextAlignment="Left"><Run Text="&#xA;&#x9;"/><Run Text="NOME DO "/><Run Language="pt-br" Text="AUTOR"/><Run Text=" :"/></TextBlock>
+        <TextBlock x:Name="txtAutor" HorizontalAlignment="Left" Margin="35,177,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="166" TextDecorations="{x:Null}" FontWeight="Bold" TextAlignment="Left"><Run Text="&#xA;&#x9;"/><Run Text="NOME D"/><Run Language="pt-br" Text="A EDITORA"/><Run Text=" :"/></TextBlock>
+        <TextBlock x:Name="txtEditora" HorizontalAlignment="Left" Margin="35,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="166" TextDecorations="{x:Null}" FontWeight="Bold" TextAlignment="Left"><Run Text="&#xA;&#x9;"/><Run Language="pt-br" Text="NOME DO "/><Run Text="LIVRO :"/></TextBlock>
+
+        <Button Command="{Binding alterarLivro}" Content="ALTERAR DADOS" HorizontalAlignment="Left" Margin="206,296,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold" BorderBrush="#FF0A0202" FontSize="14"/>
+        <Button Command="{Binding deletaLivro}" Content="DELETAR LIVRO" HorizontalAlignment="Left" Margin="206,354,0,0" VerticalAlignment="Top" Height="40" Width="270" FontWeight="Bold" BorderBrush="#FF080303" FontSize="14"/>
+        <Button Command="{Binding adicionaLivro}" x:Name="btnCadastrar" Content="CADASTRAR LIVROS" HorizontalAlignment="Left" Margin="206,235,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.429,1.455" Width="270" Height="40" FontWeight="Bold" FontSize="14" BorderBrush="#FF080202"/>
+
+        <ListView x:Name="lstAlteracao" ItemsSource="{Binding ListaDeLivros}" Margin="500,40,20,40" BorderBrush="#FF030406" Foreground="#FF040710" FontSize="14" FontWeight="Bold">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn/>
+                    <GridViewColumn Header="Nome do Livro" DisplayMemberBinding="{Binding Nome}" Width="150"/>
+                    <GridViewColumn Header="Nome do Autor" DisplayMemberBinding="{Binding Autor}" Width="170"/>
+                    <GridViewColumn Header="Nome da Editora" DisplayMemberBinding="{Binding Editora}" Width="150"/>
                 </GridView>
             </ListView.View>
         </ListView>
+
     </Grid>
 </Window>
 

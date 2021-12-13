@@ -24,14 +24,22 @@ namespace CrudLuz
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        public InserirDados(string Nome, string Autor, string Editora)
         {
-            //MainWindow lista = new MainWindow();
-            //lista.Show();
-
+            InitializeComponent();
+            txtNome.Text = Nome;
+            txtAutor.Text = Autor;
+            txtEditora.Text = Editora;
         }
 
-        private void BtnFechar_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow lista = new MainWindow();
+            lista.Show();
+
+        }
+        
+        public void BtnFechar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }

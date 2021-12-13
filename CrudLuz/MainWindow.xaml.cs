@@ -25,11 +25,5 @@ namespace CrudLuz
             DataContext = new MainWindowVM();
             InitializeComponent();
         }
-
-        private void btnCadastrar_Click(object sender, RoutedEventArgs e)
-        {
-            InserirDados cadastro = new InserirDados();
-            cadastro.Show();
-        }
     }
 }
